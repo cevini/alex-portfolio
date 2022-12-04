@@ -1,0 +1,278 @@
+@import url('https://fonts.googleapis.com/css2?family=Brygada+1918:wght@400;600&family=Source+Serif+Pro&display=swap');
+*{
+  border: none;
+  padding: 0; margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  transition: .3s;
+  outline: none;
+  font-weight: 100;
+}
+:root{
+  /* Cores */
+  --branco: white;
+
+  --pardo: #D4862A;
+  --bege: #E8C090;
+  --preto: #3c260c;
+  --cinza: #8c9464;
+  --prata: #CCC4AC;
+
+
+  /* Fonts */
+  --titulo: 'Source Serif Pro', serif;
+  --texto: 'Brygada 1918', serif;
+}
+/* Pré-classes */
+body{
+  background
+}
+h1,h2,h3,h4,h5,h6{
+  font-family: var(--titulo)
+}
+span,a,p{
+  font-family: var(--texto)
+}
+.container{
+ max-width: 960px;
+ width: 100%;
+ margin: auto;
+ padding-left: 1.5rem;
+ padding-right: 1.5rem
+}
+.heading{
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: bold;
+  word-spacing: 1rem;
+  font-size: 2rem;
+  padding-top: 2rem;
+  color: var(--preto)
+}
+.heading-2{
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: bold;
+  word-spacing: 1rem;
+  font-size: 2rem;
+  padding-top: 2rem;
+  color: var(--bege)
+}
+/* Navbar */
+header{
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  z-index: 100;
+}
+.header-active{
+  background: #2a1b09
+}
+.nav{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 10px;
+  padding-bottom: 10px
+}
+.logo{
+  font-size: 1.2rem;
+  color: /*adicionar cor*/;
+  font-family: var(--logo)
+}
+.navbar{
+  display: flex;
+  align-items: center;
+  column-gap: 1.5rem;
+}
+.nav-link{
+  font-size: 0.8rem;
+  padding: 4px 8px;
+  border-radius: 0.2rem;
+  color: var(--bege);
+  font-family: var(--titulo);
+  text-transform: uppercase;
+}
+.nav-link:hover{
+  color: /*adicionar cor*/;
+  background: /*adicionar cor*/
+}
+.menu-icon{
+  display: none; /*mudar para flex apenas para ver e mudar a cor*/
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  grid-row-gap: 5px;
+  cursor: pointer;
+  z-index: 200
+}
+.menu-icon div{
+  display: block;
+  background: var(--bege);
+  width: 24px; height: 2px;
+}
+.move .line1{
+  transform: rotate(-45deg) translate(-5px,5px);
+}
+.move .line2{
+  opacity: 0;
+}
+.move .line3{
+  transform: rotate(45deg) translate(-5px,-5px);
+}
+
+/* Início */
+#home{
+  display: flex;
+  background: var(--preto)
+}
+.home-content{
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.home-text{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 10rem;
+  color: var(--bege)
+}
+.home-img{
+  width: 30rem; height: 100vh;
+  object-fit: cover;
+  object-position: center;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 20% 100%);
+}
+.home-text h1{
+  font-size: 3rem
+}
+.home-text span{
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  word-spacing: 1rem;
+  text-align: center;
+}
+.home-text .social{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  max-width: 12rem;
+  margin: 0 auto;
+}
+.home-text .social i{
+  font-size: 2rem;
+  color: var(--bege)
+}
+
+/* Sobre */
+#about{
+  background: var(--bege);
+}
+.about-content{
+  min-height: 85vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.about-content p{
+  width: 20rem;
+  padding: 2rem;
+  background: var(--preto);
+  color: var(--bege);
+  border-radius: 0 4rem 4rem 0
+}
+.about-content b{
+  font-weight: 700
+}
+.about-img{
+  width: 20rem;
+  height: 26.6rem;
+  object-fit: cover;
+  object-position: 0% 20%;
+  border-radius: 4rem 0 0 4rem
+}
+
+/* Portfólio */
+#portfolio{
+  background: var(--preto)
+}
+.portfolio-content{
+  min-height: 100vh
+}
+@media (max-width: 885px){
+  .home-img{
+    display: none
+  }
+  #home{
+    background: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url("https://i.imgur.com/VHlkeZ9.jpg") no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+}
+@media (max-width: 775px){
+  .menu-icon{
+    display: flex;
+  }
+  .navbar{
+    position: absolute;
+    top: 0; right: -200%;
+    width: 300px;
+    height: 100vh;
+    background: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 20px;
+    transition: 0.5s all cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+  .open-menu{
+    right: 0;
+    transition: 0.5s all cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+  .nav-link{
+    display: block;
+    margin: 1rem 0;
+  }
+  .about-img{
+    display: none
+  }
+  #about{
+    background: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url("https://i.imgur.com/hyI2rYh.jpg") no-repeat;
+    background-size: cover;
+    background-position: top;
+  }
+  .about-content p{
+    width: 20rem;
+    padding: 2rem;
+    background: #3c260c78;
+    color: var(--bege);
+    border-radius: 3rem
+  }
+  #about .heading{
+    color: var(--bege)
+  }
+}
+@media (max-width: 525px){
+  .home-text h1{
+    font-size: 1.8rem
+  }
+  .home-text .social i{
+    font-size: 1.5rem
+  }
+  .home-text span{
+    font-size: 12px
+  }
+}
+@media (max-width: 425px){
+  p{
+    font-size: 14px
+  }
+  .heading,.heading-2{
+    font-size: 1.5rem
+  }
+}
