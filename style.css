@@ -147,7 +147,7 @@ header{
 .home-content{
   min-height: 100vh;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
 }
 .home-text{
@@ -155,7 +155,9 @@ header{
   flex-direction: column;
   justify-content: space-between;
   height: 10rem;
-  color: var(--bege)
+  color: var(--bege);
+  align-items: center;
+  margin: auto;
 }
 .home-img{
   width: 30rem; height: 100vh;
@@ -172,16 +174,21 @@ header{
   word-spacing: 1rem;
   text-align: center;
 }
-.home-text .social{
-  width: 100%;
+.home-content .social{
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: space-between;
-  max-width: 12rem;
-  margin: 0 auto;
+  height: 9rem;
+  position: relative;
+  top: 6px
 }
-.home-text .social i{
-  font-size: 2rem;
+.home-content .social i{
+  font-size: 1.5rem;
   color: var(--bege)
+}
+.home-content .social i:hover{
+  transform: translateY(-5px);
 }
 
 /* Sobre */
@@ -219,7 +226,7 @@ header{
 
 /* Portfólio */
 #portfolio{
-  background: url("https://i.imgur.com/6bGnk2X.jpg") no-repeat;
+  background: radial-gradient(rgba(0,0,0,0.5),rgba(0,0,0,1)), url("https://i.imgur.com/6bGnk2X.jpg") no-repeat;
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
@@ -283,12 +290,28 @@ header{
   font-size: 2rem;
   color: var(--bege)
 }
+.footer-social i:hover{
+  transform: scale(1.2);
+}
 .criador{
   color: var(--bege);
   display: flex;
   justify-content: center;
   font-size: 12px;
   font-family: var(--titulo);
+}
+@media (max-width: 1000px){
+  .home-text{
+    margin: 0;
+    align-items: flex-start;
+  }
+  .home-content{
+    gap: 1rem;
+    justify-content: flex-start;
+  }
+  .home-text h1{
+    font-size: 2.5rem
+  }
 }
 @media (max-width: 885px){
   .home-img{
@@ -358,6 +381,10 @@ header{
   .home-text span{
     font-size: 12px
   }
+  .home-content .social{
+    top: 0;
+    height: 10rem
+  }
   .footer-content{
     flex-direction: column;
   }
@@ -370,10 +397,13 @@ header{
   }
 }
 @media (max-width: 425px){
-  p{
+  p, .btn{
     font-size: 14px
   }
   .heading,.heading-2{
     font-size: 1.5rem
+  }
+  .home-text h1{
+    font-size: 25px
   }
 }
